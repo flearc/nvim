@@ -13,9 +13,11 @@ return {
     servers = {
       lua_ls = require 'plugins.lsp.servers.lua_ls',
       gopls = require 'plugins.lsp.servers.gopls',
+      ruff_lsp = {},
     },
     extra_tools = {
       'stylua',
+      'ruff',
     },
   },
   config = function(_, opts)
