@@ -21,11 +21,22 @@ return {
   },
   opts = {
     arg = 'leetcode.nvim',
-    lang = 'golang',
+    lang = 'python3',
     cn = {
       enabled = true,
       translator = false,
       translate_problems = false,
+    },
+    hooks = {
+      ['enter'] = {
+        function()
+          local root = vim.fn.stdpath 'data' .. '/leetcode'
+          -- check if the .git directory exists
+          if vim.fn.isdirectory(root .. '/.git') == 0 then
+            vim.fn.system { 'git', 'init', root }
+          end
+        end,
+      },
     },
     injector = {
       ['golang'] = {
