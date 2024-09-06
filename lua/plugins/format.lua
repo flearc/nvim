@@ -25,7 +25,8 @@ return {
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      go = { 'goimports', 'gofmt' },
+      go = { 'goimports', 'gofumpt', 'golines' },
+      python = { 'ruff_organize_imports', 'ruff_format' },
     },
   },
   config = function(_, opts)
