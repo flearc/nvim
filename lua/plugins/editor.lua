@@ -144,5 +144,24 @@ return {
       Usage: `:TransparentEnable` and `:TransparentDisable`
     --]]
     { 'xiyaowong/transparent.nvim' },
+    -- venv
+    {
+      'linux-cultist/venv-selector.nvim',
+      branch = 'regexp', -- Use this branch for the new version
+      lazy = false,
+      opts = {
+        settings = {
+          options = {
+            notify_user_on_venv_activation = true,
+            debug = true,
+          },
+        },
+      },
+      --  Call config for python files and load the cached venv automatically
+      ft = 'python',
+      keys = {
+        { ',v', '<cmd>VenvSelect<cr>', desc = 'Select VirtualEnv', ft = 'python' },
+      },
+    },
   },
 }

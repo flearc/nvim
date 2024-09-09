@@ -15,7 +15,8 @@ return {
     'theHamsta/nvim-dap-virtual-text',
 
     -- Add your own debuggers here
-    'leoluz/nvim-dap-go',
+    'leoluz/nvim-dap-go', -- go
+    'mfussenegger/nvim-dap-python', -- python
   },
   keys = function(_, keys)
     local dap = require 'dap'
@@ -61,6 +62,7 @@ return {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
         'codelldb',
+        'debugpy',
       },
     }
 
@@ -96,5 +98,7 @@ return {
 
     -- Install golang specific config
     require('dap-go').setup {}
+    local debugpy_path = require('mason-registry').get_package('debugpy'):get_install_path()
+    require('dap-python').setup(debugpy_path .. '/venv/bin/python')
   end,
 }
