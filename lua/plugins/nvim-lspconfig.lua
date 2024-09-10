@@ -7,7 +7,7 @@ return {
     { 'williamboman/mason.nvim', config = true },
     { 'j-hui/fidget.nvim', opts = {} },
     -- setup rust
-    { 'mrcjkb/rustaceanvim', version = '^4', lazy = false },
+    { 'mrcjkb/rustaceanvim', version = '^5', lazy = false },
   },
   config = function()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
