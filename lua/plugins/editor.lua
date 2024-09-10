@@ -2,14 +2,6 @@ return {
   -- Automatic adjust shiftwidth and expandtab
   'tpope/vim-sleuth',
 
-  -- Better vim.notify
-  {
-    'rcarriga/nvim-notify',
-    config = function()
-      vim.notify = require 'notify'
-    end,
-  },
-
   -- Highlight comment for TODO HACK BUG etc
   {
     'folke/todo-comments.nvim',
@@ -28,6 +20,45 @@ return {
       { '<leader>xX', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Buffer Diagnostics' },
       { '<leader>xL', '<cmd>Trouble loclist toggle<cr>', desc = 'Location List' },
       { '<leader>xQ', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix List' },
+    },
+  },
+
+  -- Noice
+  {
+    'folke/noice.nvim',
+    event = 'VeryLazy',
+    opts = {
+      cmdline = {
+        enabled = false,
+      },
+      messages = {
+        enabled = false,
+      },
+      popupmenu = {
+        enabled = false,
+      },
+      lsp = {
+        override = {
+          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
+          ['cmp.entry.get_documentation'] = true, -- requires hrsh7th/nvim-cmp
+        },
+        hover = {
+          -- prevent "No information available" messages
+          silent = true,
+        },
+      },
+      presets = {
+        lsp_doc_border = true,
+      },
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      'MunifTanjim/nui.nvim',
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      'rcarriga/nvim-notify',
     },
   },
 
