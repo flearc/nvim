@@ -90,7 +90,7 @@ return {
         ---@diagnostic disable-next-line: missing-fields
         formatting = {
           format = require('lspkind').cmp_format {
-            with_text = true,
+            mode = 'symbol_text',
             menu = {
               nvim_lsp = '[LSP]',
               luasnip = '[LuaSnip]',
