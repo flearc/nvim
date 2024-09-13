@@ -2,6 +2,9 @@ return {
   -- Automatic adjust shiftwidth and expandtab
   'tpope/vim-sleuth',
 
+  -- Use `.` to repeat
+  'tpope/vim-repeat',
+
   -- Highlight comment for TODO HACK BUG etc
   {
     'folke/todo-comments.nvim',
