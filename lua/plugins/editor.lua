@@ -26,6 +26,7 @@ return {
   -- Noice
   {
     'folke/noice.nvim',
+    commit = 'd9328ef',
     event = 'VeryLazy',
     opts = {
       cmdline = {
@@ -47,9 +48,11 @@ return {
           -- prevent "No information available" messages
           silent = true,
         },
-      },
-      presets = {
-        lsp_doc_border = true,
+        signature = {
+          -- diable because the window opened will cover the current line
+          -- see https://github.com/folke/noice.nvim/issues/930
+          enabled = false,
+        },
       },
     },
     dependencies = {
