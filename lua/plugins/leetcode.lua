@@ -42,6 +42,21 @@ return {
       ['golang'] = {
         before = { 'package main' },
       },
+      ['python3'] = {
+        before = {
+          '# pyright: reportReturnType=false',
+          '# pyright: reportDeprecated=false',
+          '# pyright: reportWildcardImportFromLibrary=false',
+          '# ruff: noqa: F403 F405 E741',
+          'import copy',
+          'from bisect import *',
+          'from collections import *',
+          'from heapq import *',
+          'from itertools import *',
+          'from math import *',
+          'from typing import *',
+        },
+      },
     },
   },
 }
