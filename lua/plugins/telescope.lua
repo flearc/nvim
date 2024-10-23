@@ -13,6 +13,13 @@ return { -- Fuzzy Finder (files, lsp, etc)
     },
     { 'nvim-telescope/telescope-ui-select.nvim' },
 
+    {
+      'nvim-telescope/telescope-frecency.nvim',
+      config = function()
+        require('telescope').load_extension 'frecency'
+      end,
+    },
+
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { 'nvim-tree/nvim-web-devicons' },
   },
