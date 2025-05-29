@@ -20,6 +20,8 @@ vim.g.maplocalleader = '\\'
 
 require('lazy').setup {
   spec = {
+    -- plugin not ready for use
+    { import = 'dev' },
     -- import your plugins
     { import = 'plugins' },
     { import = 'plugins.lsp' },
