@@ -179,7 +179,14 @@ return {
       -- pyright = {},
       rust_analyzer = {
         settings = {
-          ['rust-analyzer'] = {},
+          ['rust-analyzer'] = {
+            check = {
+              command = 'clippy',
+            },
+            cargo = {
+              features = 'all',
+            },
+          },
         },
       },
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
