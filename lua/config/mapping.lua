@@ -6,3 +6,4 @@ vim.keymap.set('n', '<leader>ts', '<cmd>10split | terminal<cr>', { desc = 'termi
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 -- leetcode
 vim.keymap.set('n', '<leader>ld', '<cmd>Leet desc<cr>')
+vim.keymap.set('n', '<leader>lc', '<cmd>Leet console<cr>')
